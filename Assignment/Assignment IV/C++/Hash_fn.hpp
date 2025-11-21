@@ -15,6 +15,8 @@
 #define HASH_FN_HPP
 
 #include <string>
+#include <cstdint>     
+#include <limits>     
 
 int myHashString(const std::string& str, int m);
 int myHashInt(int key, int m);

@@ -17,9 +17,9 @@
 
 #include <stdio.h>
 #include <string.h>
+#include <limits.h> // 確認高位元整數正常使用不會溢出
 
 int myHashString(const char* str, int m);
 int myHashInt(int key, int m);
 
 #endif
-
