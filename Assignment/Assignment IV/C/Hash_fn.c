@@ -24,11 +24,14 @@
 int myHashInt(int key, int m) {
     // TODO: replace with your own design
 
-    if (m <= 0)
-        return -1; // 處理錯誤輸入
-    if( key < 0)
-        return -2; // 處理錯誤輸入
-
+    if (m <= 0){
+        printf ("hash table大小輸入錯誤");
+        return -1;
+    }
+    if( key < 0){
+        printf ("不支援負整數鍵值");
+        return -2;
+    }
     unsigned int Hash_Value = 2654435769U;  //選擇大數質數來打亂hash結果  
     unsigned int result;
 
@@ -39,11 +42,14 @@ int myHashInt(int key, int m) {
 
 int myHashString(const char* str, int m) {
     // TODO: replace with your own design
-    if (m <= 0) //處理錯誤輸入
+    if (m <= 0){
+        printf ("hash table大小輸入錯誤");
         return -1;
-    if (str == NULL || *str == '\0')
-        return -2; // 處理空指標和空字串
-
+    }    
+    if (str == NULL || *str == '\0'){
+        printf ("字串鍵值不可為空");
+        return -2; 
+    }
     unsigned long hash_value = 5381; // 初始值選擇一個質數
 
     while (*str != '\0') {

@@ -40,14 +40,6 @@ int main(void) {
         printf("-----------------\n");
         for (int i = 0; i < num_keys; i++) {
             int idx = myHashInt(int_keys[i], m);
-            if(idx == -1) {
-                printf("hash table大小輸入錯誤\n");
-                break;
-            }
-            else if(idx == -2) {
-                printf("不支援負整數鍵值\n");
-                break;
-            }
             printf("%d\t%d\n", int_keys[i], idx);
         }
         printf("\n");
@@ -64,14 +56,6 @@ int main(void) {
         printf("-----------------\n");
         for (int i = 0; i < num_keys; i++) {
             int idx = myHashString(str_keys[i], m);
-            if(idx == -1) {
-                printf("hash table大小輸入錯誤\n");
-                break;
-            }
-            else if(idx == -2) {
-                printf("字串鍵值不可為空\n");
-                break;
-            }
             printf("%s\t%d\n", str_keys[i], idx);
         }
         printf("\n");
