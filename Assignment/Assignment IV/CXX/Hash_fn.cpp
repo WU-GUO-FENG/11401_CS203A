@@ -11,11 +11,7 @@
 
    Development History:
     - 2025/11/21: 上傳初始程式碼
-<<<<<<< Updated upstream
-    - 2025/11/26: 新增註解和參考、修改Hashint從繼承狀態改為增加MurmurHash 3，。
-=======
     - 2025/11/26: 新增註解和參考、修改Hashint從繼承狀態改為增加MurmurHash 3、修改錯誤處理機制。
->>>>>>> Stashed changes
 
    References:
     - CSDN MurmurHash 3 算法：https://blog.csdn.net/weixin_43114209/article/details/143133955
@@ -28,11 +24,14 @@
 int myHashInt(int key, int m) {
     // TODO: replace with your own design
     
-    if (m <= 0)
-        throw "hash table大小輸入錯誤";   //處理錯誤輸入
-    if( key < 0)
-        throw "不支援負整數鍵值";
-
+    if (m <= 0){
+        printf ("hash table大小輸入錯誤");
+        return -1;
+    }
+    if( key < 0){
+        printf ("不支援負整數鍵值");
+        return -2; 
+    }
     unsigned int A = 2654435769U;  //選擇大數質數來打亂hash結果  
         
     unsigned int result = key * A;
@@ -45,11 +44,15 @@ int myHashInt(int key, int m) {
 }
 
 int myHashString(const string& str, int m) {
-    if (m <= 0)
-        throw "hash table大小輸入錯誤";   //處理錯誤輸入
-    if (str.empty())
-        throw "字串鍵值不可為空";
-
+    if (m <= 0){
+        printf ("hash table大小輸入錯誤");
+        return -1;  
+    }
+    if (str.empty()){
+        printf ("字串鍵值不可為空");
+        return -2;
+    }
+    
     uint32_t hash_value = 5381U; // 初始值選擇一個質數
     unsigned char c;
 
