@@ -5,12 +5,13 @@
    ========================================
 
    Description:
-    This file contains the hash functions for integer and string keys.
+    宣告hash程式碼定義的函式和變數。
 
    Development History:
-    - 2025/11/17: Initial implementation
+    - 2025/11/21: 上傳初始程式碼
+    - 2025/11/26: 移除並未使用的宣告。
 
-   Developer: Yu-Feng Huang <yfhuang@saturn.yzu.edu.tw>
+   Developer: WU-GUO-FENG <s1113306@mail.yzu.edu.tw>
  */
 #ifndef HASH_FN_H
 #define HASH_FN_H
@@ -22,4 +23,3 @@ int myHashString(const char* str, int m);
 int myHashInt(int key, int m);
 
 #endif
-
