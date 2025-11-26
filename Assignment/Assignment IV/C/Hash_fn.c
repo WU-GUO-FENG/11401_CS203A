@@ -9,7 +9,7 @@
 
    Development History:
     - 2025/11/21: 上傳初始程式碼。
-    - 2025/11/26: 新增註解和參考、修改程式碼宣告。
+    - 2025/11/26: 新增註解和參考、修改程式碼宣告、修改錯誤處理機制。
 
 
    References:
@@ -24,8 +24,10 @@
 int myHashInt(int key, int m) {
     // TODO: replace with your own design
 
-    if (m <= 0 && key < 0)
+    if (m <= 0)
         return -1; // 處理錯誤輸入
+    if( key < 0)
+        return -2; // 處理錯誤輸入
 
     unsigned int Hash_Value = 2654435769U;  //選擇大數質數來打亂hash結果  
     unsigned int result;
@@ -40,7 +42,7 @@ int myHashString(const char* str, int m) {
     if (m <= 0) //處理錯誤輸入
         return -1;
     if (str == NULL || *str == '\0')
-        return 0; // 處理空指標和空字串
+        return -2; // 處理空指標和空字串
 
     unsigned long hash_value = 5381; // 初始值選擇一個質數
 
