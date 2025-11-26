@@ -5,18 +5,19 @@ REM Compilers
 set CC=gcc.exe
 set CXX=g++.exe
 
+
 REM Flags
-set CFLAGS=-std=c23 -Wall -Wextra -Wpedantic -g
-set CXXFLAGS=-std=c++23 -Wall -Wextra -Wpedantic -g
+REM set CFLAGS=-std=c23 -Wall -Wextra -Wpedantic -g
+REM set CXXFLAGS=-std=c++23 -Wall -Wextra -Wpedantic -g
 
 REM Source files
 set C_SRCS=C\main.c C\hash_fn.c
 set C_OBJS=C\main.o C\hash_fn.o
 set C_BIN=C\hash_function.exe
 
-set CXX_SRCS=CXX\main.cpp CXX\hash_fn.cpp
-set CXX_OBJS=CXX\main.o CXX\hash_fn.o
-set CXX_BIN=CXX\hash_function_cpp.exe
+set CXX_SRCS=C++\main.cpp C++\Hash_fn.cpp
+set CXX_OBJS=C++\main.o C++\Hash_fn.o
+set CXX_BIN=C++\hash_function_cpp.exe
 
 if "%1"=="" goto all
 if "%1"=="all" goto all
@@ -39,15 +40,15 @@ goto end
 
 :cxx
 echo Building C++ version...
-%CXX% %CXXFLAGS% -c CXX\main.cpp -o CXX\main.o
-%CXX% %CXXFLAGS% -c CXX\hash_fn.cpp -o CXX\hash_fn.o
-%CXX% %CXXFLAGS% -o %CXX_BIN% %CXX_OBJS%
+%CXX% %CXXFLAGS% -c C++\main.cpp -o C++\main.o
+%CXX% %CXXFLAGS% -c C++\Hash_fn.cpp -o C++\Hash_fn.o
+%CXX% %CXXFLAGS% -o %CXX_BIN% C++\main.o C++\Hash_fn.o
 goto end
 
 :clean
 echo Cleaning...
 if exist C\*.o del C\*.o
-if exist CXX\*.o del CXX\*.o
+if exist C++\*.o del C++\*.o
 if exist %C_BIN% del %C_BIN%
 if exist %CXX_BIN% del %CXX_BIN%
 goto end
