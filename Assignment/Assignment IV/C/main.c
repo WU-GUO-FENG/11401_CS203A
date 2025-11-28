@@ -1,5 +1,5 @@
 
-/* 
+/*
    ========================================
    Hash Function Observation (C Version)
    ========================================
@@ -11,8 +11,9 @@
 
    Development History:
     - 2025/11/11: Initial implementation
+    - 2025/11/26: 增加錯誤處理機制。
 
-   Developer: Yu-Feng Huang <yfhuang@saturn.yzu.edu.tw>
+   Developer: WU-GUO-FENG <s1113306@mail.yzu.edu.tw>
  */
 
 #include <stdio.h>

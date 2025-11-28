@@ -5,9 +5,10 @@ REM Compilers
 set CC=gcc.exe
 set CXX=g++.exe
 
+
 REM Flags
-set CFLAGS=-std=c23 -Wall -Wextra -Wpedantic -g
-set CXXFLAGS=-std=c++23 -Wall -Wextra -Wpedantic -g
+REM set CFLAGS=-std=c23 -Wall -Wextra -Wpedantic -g
+REM set CXXFLAGS=-std=c++23 -Wall -Wextra -Wpedantic -g
 
 REM Source files
 set C_SRCS=C\main.c C\hash_fn.c

@@ -57,8 +57,7 @@
   "C_Cpp_Runner.useLinkTimeOptimization": false,
   "C_Cpp_Runner.msvcSecureNoWarnings": false,
   "files.associations": {
-    "hash_fn.h": "c",
-    "limits": "cpp",
+    "string.h": "c",
     "xstring": "cpp"
   }
 }
